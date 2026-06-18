@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechGadgets Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="ghost-overlay"></div>
+
+    <header>
+        <nav>
+            <div class="logo">TechGadgets</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="cart-btn" style="color: white; background: #007bff;">
+                Cart (<span id="cart-count">0</span>)
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <h1>Welcome to TechGadgets</h1>
+            <p>Discover the latest in technology</p>
+            <div class="hero-buttons">
+                <button id="explore-btn" class="btn-primary">Explore Products</button>
+                <button id="deals-btn" class="btn-secondary">View Deals</button>
+            </div>
+        </section>
+
+        <section id="products" class="products-section">
+            <h2>Our Products</h2>
+            
+            <div class="live-clock">
+                <span>Current Time: </span>
+                <span id="clock-display">--:--:--</span>
+                <button id="stop-clock-btn" class="btn-small">Stop Clock</button>
+            </div>
+
+            <div class="product-filters">
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="phones">Phones</button>
+                <button class="filter-btn" data-category="laptops">Laptops</button>
+                <button class="filter-btn" data-category="accessories">Accessories</button>
+            </div>
+
+            <div id="products-grid" class="products-grid">
+                <!-- Products loaded dynamically -->
+                <div class="loading-spinner">Loading products...</div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <button id="prev-page" class="page-btn">Previous</button>
+                <span id="page-info">Page 1 of 3</span>
+                <button id="next-page" class="page-btn">Next</button>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <h2>Contact Us</h2>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <div class="form-actions" id="submit-area">
+                    <button type="submit" id="submit-btn" class="btn-primary">Send Message</button>
+                </div>
+            </form>
+            <div id="form-status" class="form-status"></div>
+        </section>
+
+        <div id="modal-backdrop" class="modal-backdrop hidden"></div>
+        <div id="product-modal" class="pr+oduct-modal hidden">
+            <div class="modal-content">
+                <button class="modal-close" id="modal-close">&times;</button>
+                <h3 id="modal-title">Product Name</h3>
+                <p id="modal-description">Product description here</p>
+                <p id="modal-price" class="modal-price">$0.00</p>
+                <button id="modal-add-cart" class="btn-primary">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter">
+            <h2>Subscribe to Newsletter</h2>
+            <div class="newsletter-form" style="display: block;">
+                <input type="email" id="newsletter-email" placeholder="Enter your email">
+                <button id="subscribe-btn" class="btn-primary">Subscribe</button>
+            </div>
+            <p id="newsletter-status"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 TechGadgets. All rights reserved.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
