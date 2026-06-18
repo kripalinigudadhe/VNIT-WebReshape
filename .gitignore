@@ -1,0 +1,11 @@
+# Solution file - DO NOT COMMIT
+SOLUTION.md
+plan.md
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
